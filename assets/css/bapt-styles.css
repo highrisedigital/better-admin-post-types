@@ -1,0 +1,55 @@
+.edit-php .bapt-post-type-taxonomies {
+	margin-top: 20px;
+}
+.edit-php .bapt-post-type-taxonomies a.tax-button {
+	margin-left: 4px;
+    padding: 4px 8px;
+    position: relative;
+    text-decoration: none;
+    border: none;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: #f7f7f7;
+    text-shadow: none;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: normal;
+    color: #0073aa;
+    cursor: pointer;
+    outline: 0;
+}
+.edit-php .bapt-post-type-taxonomies a.tax-button:hover {
+	border-color: #008EC2;
+    background: #00a0d2;
+    color: #fff;
+}
+
+.bapt-content-wrapper .bapt-content-block {
+	float: left;
+	width: 31%;
+	min-width: auto;
+	margin: 0 1% 1% 0;
+}
+.bapt-content-wrapper .bapt-content-block a.tax-button {
+	display: inline-block;
+	margin-bottom: 8px;
+	top: 0;
+}
+.bapt-content-wrapper .bapt-content-block:nth-of-type(3n+1) {
+	clear: left;
+}
+
+
+@media screen and (min-width: 721px) {
+	.bapt-content-wrapper .bapt-content-block {
+		min-height: 320px;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	.bapt-content-wrapper .bapt-content-block {
+		float: none;
+		width: 100%;
+	}
+}
