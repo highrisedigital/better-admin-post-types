@@ -8,7 +8,9 @@
  * Author URI: https://highrise.digital
  * License: GPLv2 or later
  * Text Domain: better-admin-post-types
-*/
+ *
+ * @package better-admin-post-types
+ */
 
 /**
  * Copyright (c) 2016 Highrise Digitial Ltd. All rights reserved.
