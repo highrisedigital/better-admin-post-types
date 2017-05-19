@@ -9,3 +9,5 @@ This plugin provides a simple solution as it combines all of the post types on y
 On the post listing screen the taxonomies for the current post type are listed at the top of the screen.
 
 ![Taxonomies listed on the post type listing screens](assets/images/post-type-listings-taxonomies.png)
+
+Any post type which is registered with the argument of `show_ui => true` will by default be included in the new content block menu item. If a post type declares `show_in_menu` argument to anything other than true it will not be included in the content blocks. This is because it is likely it would be shown elsehwere in the admin menu structure anyway.
