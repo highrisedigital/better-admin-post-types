@@ -44,6 +44,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'BAPT_PATH', dirname( __FILE__ ) );
 define( 'BAPT_URL', plugins_url( '', __FILE__ ) );
 
+/**
+ * Load plugin textdomain.
+ */
+function bapt_load_textdomain() {
+	load_plugin_textdomain( 'bapt_plugin', false, basename( dirname( __FILE__ ) ) . '/languages' );
+}
+
+add_action( 'plugins_loaded', 'bapt_load_textdomain' );
+
 // Admin includes.
 require_once( dirname( __FILE__ ) . '/inc/admin/admin-menus.php' );
 require_once( dirname( __FILE__ ) . '/inc/admin/admin-menu-content.php' );
