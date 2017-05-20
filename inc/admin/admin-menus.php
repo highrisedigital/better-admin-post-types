@@ -13,8 +13,8 @@ function bapt_admin_menus() {
 
 	// Add the menu for content.
 	add_menu_page(
-		__( 'Content', 'better-admin-post-types' ),
-		__( 'Content', 'better-admin-post-types' ),
+		_x( 'Content', 'page title' 'better-admin-post-types' ),
+		_x( 'Content', 'menu title', 'better-admin-post-types' ),
 		'edit_posts',
 		'bapt_content',
 		'bapt_content_page',
