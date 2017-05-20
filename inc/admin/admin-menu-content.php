@@ -3,7 +3,7 @@
  * Functions which output the page content for the admin menu items
  *
  * @package better-admin-post-types
- * @since 1.0
+ * @since 0.1
  */
 
 /**

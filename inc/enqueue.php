@@ -3,7 +3,7 @@
  * Enqueues any javascript and stylsheets for the plugin
  *
  * @package better-admin-post-types
- * @since  1.0
+ * @since  0.1
  */
 
 /**
