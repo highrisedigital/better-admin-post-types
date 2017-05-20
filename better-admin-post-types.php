@@ -48,7 +48,7 @@ define( 'BAPT_URL', plugins_url( '', __FILE__ ) );
  * Load plugin textdomain.
  */
 function bapt_load_textdomain() {
-	load_plugin_textdomain( 'bapt_plugin', false, basename( dirname( __FILE__ ) ) . '/languages' );
+	load_plugin_textdomain( 'better-admin-post-types', false, basename( dirname( __FILE__ ) ) . '/languages' );
 }
 
 add_action( 'plugins_loaded', 'bapt_load_textdomain' );

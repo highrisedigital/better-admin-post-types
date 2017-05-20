@@ -69,7 +69,7 @@ function bapt_edit_built_in_post_type_args( $args, $post_type ) {
 			if ( 'post' === $post_type ) {
 
 				// set the description string.
-				$post_desc = __( 'Posts are your sites news or blog.', 'hd-basement' );
+				$post_desc = __( 'Posts are your sites news or blog.', 'better-admin-post-types' );
 
 			}
 
@@ -77,7 +77,7 @@ function bapt_edit_built_in_post_type_args( $args, $post_type ) {
 			if ( 'page' === $post_type ) {
 
 				// set the description string.
-				$post_desc = __( 'Pages are good for your sites static content.', 'hd-basement' );
+				$post_desc = __( 'Pages are good for your sites static content.', 'better-admin-post-types' );
 
 			}
 
