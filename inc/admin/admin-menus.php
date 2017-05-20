@@ -3,7 +3,7 @@
  * Creates the admin menus
  *
  * @package better-admin-post-types
- * @since 1.0
+ * @since 0.1
  */
 
 /**

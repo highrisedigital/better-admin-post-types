@@ -3,7 +3,7 @@
  * Plugin Name: Better Admin Post Types
  * Plugin URI: https://highrise.digital
  * Description: Provides a better interface for sites which have lots of post types, consolidating them into a content menu item.
- * Version: 1.0
+ * Version: 0.1
  * Author: Highrise Digital Ltd
  * Author URI: https://highrise.digital
  * License: GPLv2 or later
