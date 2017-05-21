@@ -3,7 +3,6 @@
  * Creates the admin menus
  *
  * @package better-admin-post-types
- * @since 0.1
  */
 
 /**
@@ -13,7 +12,7 @@ function bapt_admin_menus() {
 
 	// Add the menu for content.
 	add_menu_page(
-		_x( 'Content', 'page title' 'better-admin-post-types' ),
+		_x( 'Content', 'page title', 'better-admin-post-types' ),
 		_x( 'Content', 'menu title', 'better-admin-post-types' ),
 		'edit_posts',
 		'bapt_content',

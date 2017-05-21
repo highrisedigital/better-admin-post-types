@@ -57,3 +57,4 @@ require_once( dirname( __FILE__ ) . '/inc/admin/admin-menus.php' );
 require_once( dirname( __FILE__ ) . '/inc/admin/admin-menu-content.php' );
 require_once( dirname( __FILE__ ) . '/inc/admin/admin.php' );
 require_once( dirname( __FILE__ ) . '/inc/enqueue.php' );
+require_once( dirname( __FILE__ ) . '/inc/bapt-functions.php' );

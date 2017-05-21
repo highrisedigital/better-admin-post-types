@@ -3,7 +3,6 @@
  * Functions which output the page content for the admin menu items
  *
  * @package better-admin-post-types
- * @since 0.1
  */
 
 /**
@@ -56,56 +55,31 @@ function bapt_content_page() {
 
 						<?php
 
-						// Set a default menu icon.
-						$menu_icon = 'dashicons-admin-post';
-
-						// If no menu icon is declared.
-						if ( null === $post_type_obj->menu_icon ) {
-
-							// If this post type is a page.
-							if ( 'page' === $post_type_obj->name ) {
-
-								// Set the menu icon to be the page icon.
-								$menu_icon = 'dashicons-admin-page';
-
-							} // End if().
-						} else { // We have a menu icon declared.
-
-							// Set the menu icon to that declared in register post type.
-							$menu_icon = $post_type_obj->menu_icon;
-
-						}
+						/**
+						 * Action fired before the content block title.
+						 *
+						 * @param obj $post_type_obj the post type object for this content block.
+						 */
+						do_action( 'bapt_content_block_before_title', $post_type_obj );
 
 						?>
 
-						<h2 class="hndle ui-sortable-handle"><span class="dashicons <?php echo esc_attr( $menu_icon ); ?>"></span> <?php echo esc_html( $post_type_obj->labels->name ); ?></h2>
+						<h2 class="hndle ui-sortable-handle"><span class="dashicons <?php echo esc_attr( bapt_get_content_block_dashicon( $post_type_obj ) ); ?>"></span> <?php echo esc_html( $post_type_obj->labels->name ); ?></h2>
 
 						<div class="inside">
 
 							<?php
 
-								// Output the post type description.
-								echo wp_kses_post( wpautop( $post_type_obj->description ) );
+							/**
+							 * Action fired after the content block title.
+							 *
+							 * @param obj $post_type_obj the post type object for this content block.
+							 * @hooked - bapt_content_block_description - 20
+							 * @hooked - bapt_content_block_post_type_actions - 30
+							 */
+							do_action( 'bapt_content_block_after_title', $post_type_obj );
 
 							?>
-
-							<div class="bapt-content-actions">
-
-								<h4><?php esc_html_e( 'Actions', 'better-admin-post-types' ); ?></h4>
-
-								<div class="bapt-content-actions__links">
-									<a class="page-title-action post-type-button view-all" href="<?php echo esc_url( admin_url( 'edit.php?post_type=' . $post_type ) ); ?>"><?php esc_html_e( 'View All', 'better-admin-post-types' ); ?></a>
-									<a class="page-title-action post-type-button add-new" href="<?php echo esc_url( admin_url( '/post-new.php?post_type=' . $post_type ) ); ?>"><?php esc_html_e( 'Add New', 'better-admin-post-types' ); ?></a>
-								</div>
-
-								<?php
-
-									// Output the taxonomy links for this post type.
-									bapt_post_type_taxonomy_buttons( $post_type, true );
-
-								?>
-
-							</div><!-- // bapt-content-actions -->
 
 						</div><!-- // inside -->
 					
@@ -115,7 +89,7 @@ function bapt_content_page() {
 
 				} // End foreach().
 
-				// Add an action after the content blocks are outputted
+				// Add an action after the content blocks are outputted.
 				do_action( 'bapt_after_content_blocks' );
 
 				?>

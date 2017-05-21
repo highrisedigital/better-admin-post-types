@@ -3,7 +3,6 @@
  * Admin functions
  *
  * @package better-admin-post-types
- * @since 0.1
  */
 
 /**
