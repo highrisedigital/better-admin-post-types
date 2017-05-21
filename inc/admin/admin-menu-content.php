@@ -51,7 +51,7 @@ function bapt_content_page() {
 
 					?>
 
-					<div class="postbox bapt-content-block">
+					<div class="postbox bapt-content-block bapt-content-block-<?php esc_attr_e( $post_type ); ?>">
 
 						<?php
 
