@@ -35,13 +35,13 @@ function bapt_content_page() {
 		?>
 		<div class="wrap">
 
-			<h1 class="bapt-content-title"><?php esc_html_e( 'Content', 'better-admin-post-types' ); ?></h1>
+			<h1 class="bapt-content-title"><?php esc_html( get_admin_page_title() ); ?></h1>
 
 			<div class="bapt-content-wrapper metabox-holder">
 
 				<?php
 
-				// Add an action before the content blocks are outputted
+				// Add an action before the content blocks are outputted.
 				do_action( 'bapt_before_content_blocks' );
 
 				// Loop through each post type.
