@@ -13,30 +13,15 @@
  * @return string             the class name of the icon to return - defaults to 'dashicons-admin-post'.
  */
 function bapt_get_content_block_dashicon( $post_type_obj ) {
-
-	// Set a default menu icon.
-	$menu_icon = 'dashicons-admin-post';
-
-	// If no menu icon is declared.
-	if ( null === $post_type_obj->menu_icon ) {
-
-		// If this post type is a page.
-		if ( 'page' === $post_type_obj->name ) {
-
-			// Set the menu icon to be the page icon.
-			$menu_icon = 'dashicons-admin-page';
-
-		} // End if().
-	} else { // We have a menu icon declared.
-
-		// Set the menu icon to that declared in register post type.
-		$menu_icon = $post_type_obj->menu_icon;
-
+	if ( null !== $post_type_obj->menu_icon ) {
+		return $post_type_obj->menu_icon;
+	}
+	
+	if ( 'page' === $post_type_obj->name ) {
+		return 'dashicons-admin-page';
 	}
 
-	// return the menu icon string.
-	return $menu_icon;
-
+	return 'dashicons-admin-post';
 }
 
 /**
