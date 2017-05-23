@@ -47,8 +47,9 @@ function bapt_content_page() {
 				foreach ( $post_types as $post_type ) {
 
 					// Get this post types object.
+					// Get this post types object.
 					$post_type_obj = get_post_type_object( $post_type );
-
+					$post_icon     = bapt_get_content_block_dashicon( $post_type_obj );
 					?>
 
 					<div class="postbox bapt-content-block bapt-content-block-<?php esc_attr_e( $post_type ); ?>">
@@ -64,8 +65,17 @@ function bapt_content_page() {
 
 						?>
 
-						<h2 class="hndle ui-sortable-handle"><span class="dashicons <?php echo esc_attr( bapt_get_content_block_dashicon( $post_type_obj ) ); ?>"></span> <?php echo esc_html( $post_type_obj->labels->name ); ?></h2>
-
+						<h2 class="hndle ui-sortable-handle">
+							<?php if ( 'url' === $post_icon ) : ?>
+								<img src="<?php echo esc_url( $post_type_obj->menu_icon ); ?>" class="dashicons">
+							<?php elseif ( 'svg' === $post_icon ) : ?>
+								<img src="<?php echo esc_attr( $post_type_obj->menu_icon ); ?>" class="dashicons svg">
+							<?php else : ?>
+								<span class="dashicons <?php echo esc_attr( $post_icon ); ?>"></span>
+							<?php endif; ?>
+							<?php echo esc_html( $post_type_obj->labels->name ); ?>
+						</h2>
+						
 						<div class="inside">
 
 							<?php
