@@ -9,14 +9,24 @@
  * Gets the dashicon to use for a content block. If the post type was not
  * declared with a dashicon then the default post icon is returend.
  *
- * @param  obj $post_type_obj the post type object to retrieve the icon from.
+ * @param  WP_Post_Type $post_type_obj the post type object to retrieve the icon from.
  * @return string             the class name of the icon to return - defaults to 'dashicons-admin-post'.
  */
 function bapt_get_content_block_dashicon( $post_type_obj ) {
 	if ( null !== $post_type_obj->menu_icon ) {
+
+		if ( strstr( $post_type_obj->menu_icon, 'data:image/svg+xml;' ) ) {
+			return 'svg';
+		}
+
+		if ( strstr( $post_type_obj->menu_icon, 'http' ) ) {
+			return 'url';
+		}
+
+		// 'none' or dashicon.
 		return $post_type_obj->menu_icon;
 	}
-	
+
 	if ( 'page' === $post_type_obj->name ) {
 		return 'dashicons-admin-page';
 	}
