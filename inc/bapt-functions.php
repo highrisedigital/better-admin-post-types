@@ -15,11 +15,13 @@
 function bapt_get_content_block_dashicon( $post_type_obj ) {
 	if ( null !== $post_type_obj->menu_icon ) {
 
-		if ( strstr( $post_type_obj->menu_icon, 'data:image/svg+xml;' ) ) {
+		// Checks for an inline SVG passed as the menu icon.
+		if ( 0 === strpos( $post_type_obj->menu_icon, 'data:image/svg+xml;' ) ) {
 			return 'svg';
 		}
 
-		if ( strstr( $post_type_obj->menu_icon, 'http' ) ) {
+		// Checks for a URL to an icon file.
+		if ( 0 === strpos( $post_type_obj->menu_icon, 'http' ) ) {
 			return 'url';
 		}
 
