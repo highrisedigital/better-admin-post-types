@@ -6,8 +6,14 @@
  */
 
 /**
- * Gets the dashicon to use for a content block. If the post type was not
- * declared with a dashicon then the default post icon is returend.
+ * Gets the menu icon to use for a content block.
+ *
+ * Checks to see if the post type was registered with an inline SVG
+ * icon or a URL to an icon image first and returns a hint instead
+ * of the dashicon name. If the post type was not declared with a
+ * dashicon then the default post icon is returned.
+ *
+ * @see register_post_type() for $post_type_obj properties.
  *
  * @param  WP_Post_Type $post_type_obj the post type object to retrieve the icon from.
  * @return string             the class name of the icon to return - defaults to 'dashicons-admin-post'.
